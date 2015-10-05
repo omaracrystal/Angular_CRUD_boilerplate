@@ -12,10 +12,10 @@ This app, will allow job seekers to store job postings off of any site with a ur
 - Gulp
 - PassportJS for Authentication
 - Bootstrap
-- TDD 
+- TDD
 
-![alt text](Job_Pocket_Images/job_pocket_2_side.png "Job Pocket")
-![alt text](Job_Pocket_Images/Job_Pocket_strip.png "Job Pocket")
+![alt text](images/job_pocket_2_side.png "Job Pocket")
+![alt text](images/Job_Pocket_strip.png "Job Pocket")
 
 ##Stretch Goals
 - Add Favorite Lists
