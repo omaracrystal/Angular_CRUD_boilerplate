@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>MEAN CRUD - BEERS</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+<body ng-controller="beerController">
+{{2+1}}
+  <div class="container">
+
+    <h1 class="text-center" ng-hide="edit">Add a Beer</h1>
+    <h1 class="text-center" ng-show="edit">Edit a Beer</h1>
+
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="beer.name" placeholder="Enter the beer name" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="beer.type" placeholder="Enter the beer type" required>
+      </div>
+      <div class="form-group">
+        <input type="number" step="0.1" class="form-control" ng-model="beer.abv" placeholder="Enter the beer abv" required>
+      </div>
+      <button ng-hide="edit" ng-click="postBeer()" class="btn btn-primary btn-block">Submit</button>
+      <button ng-show="edit" ng-click="updateBeer()" class="btn btn-primary btn-block">Update</button>
+    </form>
+
+    <br><hr>
+
+    <div ng-show="messageSection">
+      <p class="alert alert-info" role="alert">{{ message }}</p>
+    </div>
+
+    <h2>All Beers</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>ABV</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="beer in beers">
+          <td>{{beer.name}}</td>
+          <td>{{beer.type}}</td>
+          <td>{{beer.abv}}</td>
+          <td class="text-right">
+            <button class="btn btn-primary" ng-click="editBeer(beer._id)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+            <button class="btn btn-danger" ng-click="deleteBeer(beer._id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="../js/app.js" type="text/javascript"></script>
+  <script src="../js/controllers.js" type="text/javascript"></script>
+  <script src="../js/directives.js" type="text/javascript"></script>
+  <script src="../js/filters.js" type="text/javascript"></script>
+  <script src="../js/services.js" type="text/javascript"></script>
+</body>
+</html>
